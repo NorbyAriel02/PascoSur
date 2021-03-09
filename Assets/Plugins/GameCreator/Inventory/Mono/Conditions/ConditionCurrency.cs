@@ -5,7 +5,6 @@
 	using UnityEngine;
 	using UnityEngine.Events;
 	using GameCreator.Core;
-	using GameCreator.Variables;
 
 	#if UNITY_EDITOR
 	using UnityEditor;
@@ -14,14 +13,14 @@
 	[AddComponentMenu("")]
 	public class ConditionCurrency : ICondition
 	{
-		public NumberProperty currencyAmount = new NumberProperty(100f);
+		public int currencyAmount;
 
 		// EXECUTABLE: -------------------------------------------------------------------------------------------------
 
-		public override bool Check(GameObject target)
+		public override bool Check()
 		{
 			int currentCurrency = InventoryManager.Instance.GetCurrency();
-			return this.currencyAmount.GetInt(target) <= currentCurrency;
+			return this.currencyAmount <= currentCurrency;
 		}
 
 		// +-----------------------------------------------------------------------------------------------------------+

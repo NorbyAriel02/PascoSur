@@ -172,10 +172,8 @@
         {
             bool unequipped = false;
 
-            // int itemsToUnequip = 0;
-            // int itemsUnequipped = 0;
-
-            bool calledUnequipActions = false;
+            int itemsToUnequip = 0;
+            int itemsUnequipped = 0;
 
             for (int i = 0; i < this.equipment.items.Length; ++i)
             {
@@ -185,32 +183,26 @@
 
                     this.equipment.items[i].isEquipped = false;
 
-                    // itemsToUnequip += 1;
+                    GameObject instance = Instantiate<GameObject>(
+                        item.actionsOnUnequip.gameObject,
+                        transform.position,
+                        transform.rotation
+                    );
 
-                    if (!calledUnequipActions)
+                    itemsToUnequip += 1;
+
+                    Actions actions = instance.GetComponent<Actions>();
+                    actions.destroyAfterFinishing = true;
+                    actions.onFinish.AddListener(() =>
                     {
-                        GameObject instance = Instantiate<GameObject>(
-                            item.actionsOnUnequip.gameObject,
-                            transform.position,
-                            transform.rotation
-                        );
-                        
-                        Actions actions = instance.GetComponent<Actions>();
-                        actions.destroyAfterFinishing = true;
-                        actions.onFinish.AddListener(() =>
+                        itemsUnequipped += 1;
+                        if (itemsUnequipped >= itemsToUnequip && onUnequip != null)
                         {
-                            // itemsUnequipped += 1;
-                            // if (itemsUnequipped >= itemsToUnequip && onUnequip != null)
-                            // {
-                            //     onUnequip.Invoke();
-                            // }
-                            if (onUnequip != null) onUnequip.Invoke();
-                        });
+                            onUnequip.Invoke();
+                        }
+                    });
 
-                        actions.Execute(gameObject);
-                        calledUnequipActions = true;
-                    }
-                    
+                    actions.Execute(gameObject);
                     unequipped = true;
                 }
             }

@@ -22,7 +22,6 @@
         public Image itemImage;
         public Text itemText;
         public Text itemDescription;
-        public Text itemCount;
 
         [Space]
         public UnityEvent eventOnHoverEnter;
@@ -99,20 +98,16 @@
             }
 
             if (this.itemImage != null) this.itemImage.overrideSprite = this.item != null
-                ? this.item.sprite
-                : null;
+                    ? this.item.sprite
+                    : null;
 
             if (this.itemText != null) this.itemText.text = this.item != null
-                ? this.item.itemName.GetText()
-                : string.Empty;
+                    ? this.item.itemName.GetText()
+                    : string.Empty;
 
             if (this.itemDescription != null) this.itemDescription.text = this.item != null
-                ? this.item.itemDescription.GetText()
-                : string.Empty;
-
-            if (this.itemCount != null) this.itemCount.text = this.item != null
-                ? InventoryManager.Instance.GetInventoryAmountOfItem(this.item.uuid).ToString()
-                : 0.ToString();
+                    ? this.item.itemDescription.GetText()
+                    : string.Empty;
         }
 
         public void OnDrop(Item item)

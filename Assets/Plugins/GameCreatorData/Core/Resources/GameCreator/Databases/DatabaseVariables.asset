@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8fd88e18bfbe04f3aa7a8e49ab062838, type: 3}
   m_Name: DatabaseVariables
   m_EditorClassIdentifier: 
-  tags: {fileID: 11400000, guid: 3880bece8dae12146a4b168de6b26ae7, type: 2}
-  variables: {fileID: 11400000, guid: bf3594fefe84be24592fde88f5d6b684, type: 2}
+  tags: {fileID: 11400000, guid: 0cb460fe550cf6842a78b2fd6b17d56d, type: 2}
+  variables: {fileID: 11400000, guid: f08b0c00cc165ab43a3a0e5fcf0323fa, type: 2}

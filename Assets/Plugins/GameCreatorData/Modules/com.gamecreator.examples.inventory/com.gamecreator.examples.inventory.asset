@@ -17,7 +17,7 @@ MonoBehaviour:
     version:
       major: 1
       minor: 1
-      patch: 2
+      patch: 1
     displayName: Inventory Examples
     description: Learn how to use the Inventory module, set up items, trigger effects
       and trade items for currency.
@@ -27,7 +27,7 @@ MonoBehaviour:
       version:
         major: 1
         minor: 1
-        patch: 2
+        patch: 1
     tags:
     - examples
     - inventory

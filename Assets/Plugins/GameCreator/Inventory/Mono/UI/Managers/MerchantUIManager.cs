@@ -136,24 +136,21 @@
         private static void RequireInstance(Merchant merchant)
 		{
             if (DATABASE_INVENTORY == null) DATABASE_INVENTORY = DatabaseInventory.Load();
+            if (MerchantUIManager.Instance == null)
+			{
+				EventSystemManager.Instance.Wakeup();
+				if (DATABASE_INVENTORY.inventorySettings == null)
+				{
+                    Debug.LogError("No inventory database found");
+					return;
+                }
 
-            if (MerchantUIManager.Instance != null)
-            {
-	            Destroy(MerchantUIManager.Instance.gameObject);
-            }
-            
-            EventSystemManager.Instance.Wakeup();
-            if (DATABASE_INVENTORY.inventorySettings == null)
-            {
-	            Debug.LogError("No inventory database found");
-	            return;
-            }
+                GameObject prefab = merchant.merchantUI;
+                if (prefab == null) prefab = DATABASE_INVENTORY.inventorySettings.merchantUIPrefab;
+                if (prefab == null) prefab = Resources.Load<GameObject>(DEFAULT_UI_PATH);
 
-            GameObject prefab = merchant.merchantUI;
-            if (prefab == null) prefab = DATABASE_INVENTORY.inventorySettings.merchantUIPrefab;
-            if (prefab == null) prefab = Resources.Load<GameObject>(DEFAULT_UI_PATH);
-
-            Instantiate(prefab, Vector3.zero, Quaternion.identity);
+				Instantiate(prefab, Vector3.zero, Quaternion.identity);
+			}
 		}
 
         // PRIVATE METHODS: -----------------------------------------------------------------------

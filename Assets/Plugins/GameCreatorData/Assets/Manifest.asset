@@ -18,7 +18,7 @@ MonoBehaviour:
       version:
         major: 1
         minor: 1
-        patch: 4
+        patch: 2
       displayName: Game Creator Examples
       description: Example scenes that show how to use Game Creator tools.
       category: Examples
@@ -34,38 +34,103 @@ MonoBehaviour:
       - Assets/Plugins/GameCreator/Examples/
       dataPaths: []
   - module:
-      moduleID: com.gamecreator.examples.inventory
+      moduleID: com.gamecreator.examples.behavior
       version:
-        major: 1
-        minor: 1
-        patch: 2
-      displayName: Inventory Examples
-      description: Learn how to use the Inventory module, set up items, trigger effects
-        and trade items for currency.
+        major: 0
+        minor: 2
+        patch: 3
+      displayName: Behavior Examples
+      description: Example scenes that show how to use the Behavior module
       category: Examples
       dependencies:
-      - moduleID: com.gamecreator.module.inventory
+      - moduleID: com.gamecreator.module.behavior
         version:
-          major: 1
-          minor: 1
-          patch: 2
+          major: 0
+          minor: 2
+          patch: 3
       tags:
       - examples
-      - inventory
+      - behavior
       authorName: Marti-Joan Nogue Coll
       authorMail: marti@catsoft-studios.com
       authorSite: https://gamecreator.io
       includesData: 1
       codePaths:
-      - Assets/Plugins/GameCreator/InventoryExamples/
+      - Assets/Plugins/GameCreator/BehaviorExamples/
       dataPaths:
-      - Assets/Plugins/GameCreatorData/Inventory/
+      - Assets/Plugins/GameCreatorData/Behavior/
+  - module:
+      moduleID: com.gamecreator.module.behavior
+      version:
+        major: 0
+        minor: 2
+        patch: 3
+      displayName: Behavior
+      description: Easily define how objects behave using Behavior Trees and the
+        perception system
+      category: Module
+      dependencies: []
+      tags:
+      - module
+      - behavior
+      authorName: Marti-Joan Nogue Coll
+      authorMail: marti@catsoft-studios.com
+      authorSite: https://gamecreator.io
+      includesData: 0
+      codePaths:
+      - Assets/Plugins/GameCreator/Behavior/
+      dataPaths: []
+  - module:
+      moduleID: com.gamecreator.examples.stats
+      version:
+        major: 0
+        minor: 2
+        patch: 4
+      displayName: Stats Examples
+      description: Example scenes that show some of the most common cases using the
+        Stats module
+      category: Examples
+      dependencies:
+      - moduleID: com.gamecreator.module.stats
+        version:
+          major: 0
+          minor: 2
+          patch: 4
+      tags:
+      - examples
+      authorName: Marti-Joan Nogue Coll
+      authorMail: marti@catsoft-studios.com
+      authorSite: https://gamecreator.io
+      includesData: 1
+      codePaths:
+      - Assets/Plugins/GameCreator/StatsExamples/
+      dataPaths:
+      - Assets/Plugins/GameCreatorData/Stats/
+  - module:
+      moduleID: com.gamecreator.module.stats
+      version:
+        major: 0
+        minor: 2
+        patch: 4
+      displayName: Stats
+      description: Easily design game progression with unconstrained stat systems
+      category: Modules
+      dependencies: []
+      tags:
+      - module
+      authorName: Marti-Joan Nogue Coll
+      authorMail: marti@catsoft-studios.com
+      authorSite: https://gamecreator.io
+      includesData: 0
+      codePaths:
+      - Assets/Plugins/GameCreator/Stats/
+      dataPaths: []
   - module:
       moduleID: com.gamecreator.module.inventory
       version:
         major: 1
         minor: 1
-        patch: 3
+        patch: 1
       displayName: Inventory
       description: Manage, trade, use, equip and craft items. Includes a couple of
         inventory skins.
@@ -128,3 +193,76 @@ MonoBehaviour:
       codePaths:
       - Assets/Plugins/GameCreator/Quests/
       dataPaths: []
+  - module:
+      moduleID: com.gamecreator.examples.shooter
+      version:
+        major: 0
+        minor: 1
+        patch: 7
+      displayName: Shooter Examples
+      description: Example scenes that show how to use the Shooter module.
+      category: Examples
+      dependencies:
+      - moduleID: com.gamecreator.module.shooter
+        version:
+          major: 0
+          minor: 1
+          patch: 7
+      tags:
+      - examples
+      - shooter
+      authorName: Marti-Joan Nogue Coll
+      authorMail: marti@catsoft-studios.com
+      authorSite: https://gamecreator.io
+      includesData: 1
+      codePaths:
+      - Assets/Plugins/GameCreator/ShooterExample/
+      dataPaths:
+      - Assets/Plugins/GameCreatorData/Shooter/
+  - module:
+      moduleID: com.gamecreator.module.shooter
+      version:
+        major: 0
+        minor: 1
+        patch: 7
+      displayName: Shooter
+      description: Module that provides tools for using long and mid ranged weapons
+      category: Modules
+      dependencies: []
+      tags:
+      - module
+      - game creator
+      authorName: Marti-Joan Nogue Coll
+      authorMail: marti@catsoft-studios.com
+      authorSite: https://gamecreator.io
+      includesData: 0
+      codePaths:
+      - Assets/Plugins/GameCreator/Shooter/
+      dataPaths: []
+  - module:
+      moduleID: com.gamecreator.examples.inventory
+      version:
+        major: 1
+        minor: 1
+        patch: 1
+      displayName: Inventory Examples
+      description: Learn how to use the Inventory module, set up items, trigger effects
+        and trade items for currency.
+      category: Examples
+      dependencies:
+      - moduleID: com.gamecreator.module.inventory
+        version:
+          major: 1
+          minor: 1
+          patch: 1
+      tags:
+      - examples
+      - inventory
+      authorName: Marti-Joan Nogue Coll
+      authorMail: marti@catsoft-studios.com
+      authorSite: https://gamecreator.io
+      includesData: 1
+      codePaths:
+      - Assets/Plugins/GameCreator/InventoryExamples/
+      dataPaths:
+      - Assets/Plugins/GameCreatorData/Inventory/

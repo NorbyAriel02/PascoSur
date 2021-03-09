@@ -17,7 +17,7 @@
 		// PROPERTIES: ----------------------------------------------------------------------------
 
         [HideInInspector]
-		public Item item { get; protected set; }
+		public Item item { get; private set; }
 
         protected Button button;
 
@@ -58,16 +58,6 @@
 
         // PUBLIC METHODS: ------------------------------------------------------------------------
 
-        public void Select()
-        {
-	        SelectedItemUI.Select(this.item.uuid);
-        }
-
-        public void Deselect()
-        {
-	        SelectedItemUI.Deselect();
-        }
-        
         public virtual void UpdateUI(Item item, int amount)
 		{
 			this.item = item;
@@ -101,7 +91,6 @@
 		{
 			Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto); 
 			InventoryManager.Instance.ConsumeItem(this.item.uuid);
-			InventoryUIManager.OnDragItem(this.item.sprite, false);
 		}
 
 		public virtual void OnDragBegin(BaseEventData eventData)
